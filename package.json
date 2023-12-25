@@ -13,6 +13,7 @@
     "@react-navigation/bottom-tabs": "^6.5.11",
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",
+    "nullthrows": "^1.1.1",
     "react": "18.1.0",
     "react-native": "0.70.14",
     "react-native-linear-gradient": "^2.8.3",
