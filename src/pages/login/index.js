@@ -25,7 +25,7 @@ const Login = () => {
         <Text style={styles.teks}>Welcome !</Text>
       </LinearGradient>
       <Kotak />
-      <View>
+      {/* <View>
         <Text
           style={{
             color: '#00A9FF',
@@ -48,8 +48,8 @@ const Login = () => {
             <Image source={google} style={styles.icon} />
           </TouchableOpacity>
         </View>
-      </View>
-      <Text style={{color: '#00A9FF', marginTop: 35, textAlign: 'center'}}>
+      </View> */}
+      <Text style={{color: '#00A9FF', marginTop: 80, textAlign: 'center'}}>
         Product By Dipanegara Computer Club
       </Text>
     </View>
