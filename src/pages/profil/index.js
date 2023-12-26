@@ -1,15 +1,15 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-const Home = () => {
+const Profil = () => {
   return (
     <View style={styles.container}>
-      <Text>Home</Text>
+      <Text>Profl</Text>
     </View>
   );
 };
 
-export default Home;
+export default Profil;
 const styles = StyleSheet.create({
   container: {
     flex: 1,

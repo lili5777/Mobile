@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   Dimensions,
   StyleSheet,
@@ -10,8 +10,30 @@ import {
 } from 'react-native';
 import {user} from '../../assets/images';
 import {kunci} from '../../assets/images';
+import Modal from 'react-native-modal';
+import {useNavigation} from '@react-navigation/native';
 
 const Kotak = () => {
+  const navigation = useNavigation();
+  const [gagal, setgagal] = useState(false);
+  // const [isModalVisible, setModalVisible] = useState(false);
+
+  const modalgagal = () => {
+    setgagal(!gagal);
+  };
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = () => {
+    // Tempatkan logika login Anda di sini
+    if (username === 'lili' && password === '123') {
+      // Alert.alert('Login berhasil');
+      navigation.navigate('MainApp');
+    } else {
+      setgagal(!gagal);
+    }
+  };
   return (
     <View style={styles.container}>
       <Text
@@ -28,7 +50,11 @@ const Kotak = () => {
         <View style={styles.bulat}>
           <Image source={user} style={styles.orang} />
         </View>
-        <TextInput style={styles.input} placeholder="Username" />
+        <TextInput
+          style={styles.input}
+          placeholder="Username"
+          onChangeText={text => setUsername(text)}
+        />
       </View>
       <View style={{flexDirection: 'row', marginBottom: 20}}>
         <View style={styles.bulat}>
@@ -37,15 +63,45 @@ const Kotak = () => {
         <TextInput
           style={styles.input}
           placeholder="Password"
+          onChangeText={text => setPassword(text)}
           secureTextEntry
         />
       </View>
       <TouchableOpacity style={{marginLeft: 110, marginBottom: 20}}>
         <Text style={{color: '#00A9FF'}}>Forget Password ?</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.loginButton}>
+      <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
+
+      <Modal isVisible={gagal}>
+        <View style={styles.modal}>
+          <View style={styles.modall}>
+            <View
+              style={{
+                paddingVertical: 10,
+                backgroundColor: '#00A9FF',
+                borderTopEndRadius: 20,
+                borderTopStartRadius: 20,
+              }}>
+              <Text
+                style={{
+                  textAlign: 'center',
+                  fontWeight: 'bold',
+                  fontSize: 20,
+                  color: 'white',
+                }}>
+                Login Failed !
+              </Text>
+            </View>
+            <Text
+              onPress={modalgagal}
+              style={{textAlign: 'center', fontSize: 15, marginTop: 35}}>
+              Please check your username and password
+            </Text>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 };
@@ -127,5 +183,16 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  modal: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modall: {
+    backgroundColor: 'white',
+    width: 250,
+    height: 180,
+    borderRadius: 20,
   },
 });

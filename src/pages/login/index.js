@@ -1,5 +1,12 @@
-import React from 'react';
-import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  Alert,
+} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {logo} from '../../assets/images';
 import {fb} from '../../assets/images';
