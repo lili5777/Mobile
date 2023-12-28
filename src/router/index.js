@@ -1,9 +1,10 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Home, Login, Splash, Artikel, Kegiatan, Profil} from '../pages';
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, TabActions} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {rumah, artikel, profil, kegiatan} from '../assets';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -11,21 +12,45 @@ const Tab = createBottomTabNavigator();
 const MainApp = () => {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={Home} options={{headerShown: false}} />
+      <Tab.Screen
+        name="Dashboard"
+        component={Home}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({}) => (
+            <Image source={rumah} style={{width: '20%', height: '80%'}} />
+          ),
+        }}
+      />
       <Tab.Screen
         name="Artikel"
         component={Artikel}
-        options={{headerShown: false}}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({}) => (
+            <Image source={artikel} style={{width: '25%', height: '80%'}} />
+          ),
+        }}
       />
       <Tab.Screen
         name="Kegiatan"
         component={Kegiatan}
-        options={{headerShown: false}}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({}) => (
+            <Image source={kegiatan} style={{width: '30%', height: '80%'}} />
+          ),
+        }}
       />
       <Tab.Screen
         name="Profil"
         component={Profil}
-        options={{headerShown: false}}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({}) => (
+            <Image source={profil} style={{width: '30%', height: '80%'}} />
+          ),
+        }}
       />
     </Tab.Navigator>
   );
