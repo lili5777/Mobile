@@ -6,6 +6,7 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
+  Dimensions,
 } from 'react-native';
 import Swiper from 'react-native-swiper';
 import {sw1, sw2, sw3, konten} from '../../assets';
@@ -25,6 +26,20 @@ import LinearGradient from 'react-native-linear-gradient';
 const gambar = [sw1, sw2, sw3];
 
 const Home = () => {
+  const {width} = Dimensions.get('window');
+  const isTablet = width >= 600; // Menetapkan batas lebar untuk dianggap sebagai tablet
+
+  let imageWidth;
+  let imageHeight;
+
+  if (isTablet) {
+    imageWidth = '80%'; // Ukuran gambar untuk tablet
+    imageHeight = 250;
+  } else {
+    imageWidth = '80%'; // Ukuran gambar untuk perangkat mobile
+    imageHeight = 150;
+  }
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -48,7 +63,16 @@ const Home = () => {
             width: '100%',
           }}>
           <View style={styles.container}>
-            <Image source={gambar[currentIndex]} style={styles.foto} />
+            <Image
+              source={gambar[currentIndex]}
+              style={{
+                marginTop: 10,
+                borderRadius: 20,
+                width: imageWidth,
+                height: imageHeight,
+                resizeMode: 'cover',
+              }}
+            />
 
             <View style={styles.menu}>
               <Text style={{fontWeight: 'bold', fontSize: 18}}>Kategori</Text>
@@ -158,8 +182,6 @@ const styles = StyleSheet.create({
   foto: {
     marginTop: 10,
     borderRadius: 20,
-    width: '80%',
-    height: 150,
     resizeMode: 'cover',
   },
   menu: {

@@ -18,7 +18,7 @@ const MainApp = () => {
         options={{
           headerShown: false,
           tabBarIcon: ({}) => (
-            <Image source={rumah} style={{width: '20%', height: '80%'}} />
+            <Image source={rumah} style={{width: 30, height: 30}} />
           ),
         }}
       />
@@ -28,7 +28,7 @@ const MainApp = () => {
         options={{
           headerShown: false,
           tabBarIcon: ({}) => (
-            <Image source={artikel} style={{width: '25%', height: '80%'}} />
+            <Image source={artikel} style={{width: 30, height: 30}} />
           ),
         }}
       />
@@ -38,7 +38,7 @@ const MainApp = () => {
         options={{
           headerShown: false,
           tabBarIcon: ({}) => (
-            <Image source={kegiatan} style={{width: '30%', height: '80%'}} />
+            <Image source={kegiatan} style={{width: 35, height: 30}} />
           ),
         }}
       />
@@ -48,7 +48,7 @@ const MainApp = () => {
         options={{
           headerShown: false,
           tabBarIcon: ({}) => (
-            <Image source={profil} style={{width: '30%', height: '80%'}} />
+            <Image source={profil} style={{width: 35, height: 30}} />
           ),
         }}
       />
