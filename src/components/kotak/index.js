@@ -10,12 +10,16 @@ import {
 } from 'react-native';
 import {user} from '../../assets/images';
 import {kunci} from '../../assets/images';
+import {eye} from '../../assets/images';
+import {noteye} from '../../assets/images';
+import {wrong} from '../../assets/images';
 import Modal from 'react-native-modal';
 import {useNavigation} from '@react-navigation/native';
 
 const Kotak = () => {
   const navigation = useNavigation();
   const [gagal, setgagal] = useState(false);
+
   // const [isModalVisible, setModalVisible] = useState(false);
 
   const modalgagal = () => {
@@ -24,8 +28,13 @@ const Kotak = () => {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(true);
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const handleLogin = () => {
+    setShowPassword(!showPassword);
     // Tempatkan logika login Anda di sini
     if (username === 'lili' && password === '123') {
       // Alert.alert('Login berhasil');
@@ -64,8 +73,14 @@ const Kotak = () => {
           style={styles.input}
           placeholder="Password"
           onChangeText={text => setPassword(text)}
-          secureTextEntry
+          secureTextEntry={showPassword}
         />
+        <TouchableOpacity
+          onPress={togglePasswordVisibility}
+          style={styles.hide}>
+          <Image source={showPassword ? noteye : eye} />
+          {/* <Text>{showPassword ? 'Hide Password' : 'Show Password'}</Text> */}
+        </TouchableOpacity>
       </View>
       <TouchableOpacity style={{marginLeft: 110, marginBottom: 20}}>
         <Text style={{color: '#00A9FF'}}>Forget Password ?</Text>
@@ -77,26 +92,32 @@ const Kotak = () => {
       <Modal isVisible={gagal}>
         <View style={styles.modal}>
           <View style={styles.modall}>
-            <View
+            {/* <View
               style={{
-                paddingVertical: 10,
+                flex: 1,
                 backgroundColor: '#00A9FF',
                 borderTopEndRadius: 20,
                 borderTopStartRadius: 20,
+                height: '100%',
+                width: '100%',
+                justifyContent: 'center',
+                alignItems: 'center',
               }}>
-              <Text
-                style={{
-                  textAlign: 'center',
-                  fontWeight: 'bold',
-                  fontSize: 20,
-                  color: 'white',
-                }}>
-                Login Failed !
-              </Text>
-            </View>
+              <Image source={wrong} style={{width: 92, height: 80}} />
+            </View> */}
+
+            <Text
+              style={{
+                textAlign: 'center',
+                fontWeight: 'bold',
+                fontSize: 20,
+                color: 'black',
+              }}>
+              Login Failed !
+            </Text>
             <Text
               onPress={modalgagal}
-              style={{textAlign: 'center', fontSize: 15, marginTop: 35}}>
+              style={{textAlign: 'center', fontSize: 15, marginTop: 15}}>
               Please check your username and password
             </Text>
           </View>
@@ -164,6 +185,13 @@ const styles = StyleSheet.create({
 
     elevation: 18,
   },
+  hide: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: -lebar * 0.07,
+    position: 'relative',
+    zIndex: 1,
+  },
   orang: {
     width: 30,
     height: 30,
@@ -190,6 +218,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   modall: {
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: 'white',
     width: 250,
     height: 180,
