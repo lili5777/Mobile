@@ -4,8 +4,8 @@ import {
   Text,
   View,
   Image,
-  TouchableOpacity,
-  Alert,
+  SafeAreaView,
+  ScrollView,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {logo} from '../../assets/images';
@@ -15,44 +15,25 @@ import {Kotak} from '../../components';
 
 const Login = () => {
   return (
-    <View style={{flex: 1}}>
-      <LinearGradient
-        style={styles.header}
-        colors={['#d4f0fe', '#14b1ff']}
-        start={{x: 0, y: 0}}
-        end={{x: 0, y: 1.4}}>
-        <Image source={logo} style={styles.logo} />
-        <Text style={styles.teks}>Welcome !</Text>
-      </LinearGradient>
-      <Kotak />
-      <View>
-        <Text
-          style={{
-            color: '#00A9FF',
-            marginTop: 15,
-            textAlign: 'center',
-            fontWeight: 'bold',
-          }}>
-          or Sign in With
-        </Text>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'center',
-            marginVertical: 10,
-          }}>
-          <TouchableOpacity>
-            <Image source={fb} style={styles.icon} />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image source={google} style={styles.icon} />
-          </TouchableOpacity>
+    <SafeAreaView style={{flex: 1}}>
+      <ScrollView>
+        <View>
+          <LinearGradient
+            style={styles.header}
+            colors={['#d4f0fe', '#14b1ff']}
+            start={{x: 0, y: 0}}
+            end={{x: 0, y: 1.4}}>
+            <Image source={logo} style={styles.logo} />
+            <Text style={styles.teks}>Welcome !</Text>
+          </LinearGradient>
+          <Kotak />
+          <Text
+            style={{color: '#00A9FF', marginVertical: 80, textAlign: 'center'}}>
+            Product By Dipanegara Computer Club
+          </Text>
         </View>
-      </View>
-      <Text style={{color: '#00A9FF', marginTop: 35, textAlign: 'center'}}>
-        Product By Dipanegara Computer Club
-      </Text>
-    </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
