@@ -86,19 +86,19 @@ const Home = () => {
               }}>
               <TouchableOpacity style={{alignItems: 'center'}}>
                 <Image source={uang} style={styles.fitur} />
-                <Text>Treasurer</Text>
+                <Text style={styles.teks}>Treasurer</Text>
               </TouchableOpacity>
               <TouchableOpacity style={{alignItems: 'center'}}>
                 <Image source={surat} style={styles.fitur} />
-                <Text>Secretary</Text>
+                <Text style={styles.teks}>Secretary</Text>
               </TouchableOpacity>
               <TouchableOpacity style={{alignItems: 'center'}}>
                 <Image source={anggota} style={styles.fitur} />
-                <Text>Member</Text>
+                <Text style={styles.teks}>Member</Text>
               </TouchableOpacity>
               <TouchableOpacity style={{alignItems: 'center'}}>
                 <Image source={skejul} style={styles.fitur} />
-                <Text>Schejuled</Text>
+                <Text style={styles.teks}>Schejuled</Text>
               </TouchableOpacity>
             </View>
             <View
@@ -110,28 +110,28 @@ const Home = () => {
               }}>
               <TouchableOpacity style={{alignItems: 'center'}}>
                 <Image source={absensi} style={styles.fitur} />
-                <Text>Presence</Text>
+                <Text style={styles.teks}>Presence</Text>
               </TouchableOpacity>
               <TouchableOpacity style={{alignItems: 'center'}}>
                 <Image source={organisasi} style={styles.fitur} />
-                <Text>Organization</Text>
+                <Text style={styles.teks}>Organization</Text>
               </TouchableOpacity>
               <TouchableOpacity style={{alignItems: 'center'}}>
                 <Image source={panitia} style={styles.fitur} />
-                <Text>Committee</Text>
+                <Text style={styles.teks}>Committee</Text>
               </TouchableOpacity>
               <TouchableOpacity style={{alignItems: 'center'}}>
                 <Image source={lain} style={styles.fitur} />
-                <Text>More</Text>
+                <Text style={styles.teks}>More</Text>
               </TouchableOpacity>
             </View>
 
             <View style={styles.menu}>
-              <Text style={{fontWeight: 'bold', fontSize: 18}}>
+              <Text style={{fontWeight: 'bold', fontSize: 18,color:'black'}}>
                 Latest Post
               </Text>
               <TouchableOpacity>
-                <Text style={{fontSize: 15}}>More>></Text>
+                <Text style={{fontSize: 15}}>More</Text>
               </TouchableOpacity>
             </View>
             <ScrollView
@@ -173,6 +173,7 @@ const Home = () => {
 };
 
 export default Home;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -196,5 +197,8 @@ const styles = StyleSheet.create({
   fitur: {
     width: 40,
     height: 40,
+  },
+  teks: {
+    color:'black',
   },
 });
