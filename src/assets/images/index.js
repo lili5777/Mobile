@@ -23,6 +23,7 @@ import artikel from './artikell.png';
 import kegiatan from './kegiatann.png';
 import profil from './profill.png';
 import konten from './konten.png';
+import lili from './lili.jpeg';
 
 export {
   artikel,
@@ -50,4 +51,5 @@ export {
   lain,
   notice,
   konten,
+  lili,
 };

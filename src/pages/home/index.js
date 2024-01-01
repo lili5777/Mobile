@@ -131,7 +131,7 @@ const Home = () => {
                 Latest Post
               </Text>
               <TouchableOpacity>
-                <Text style={{fontSize: 15}}>More>></Text>
+                <Text style={{fontSize: 15}}>More</Text>
               </TouchableOpacity>
             </View>
             <ScrollView
