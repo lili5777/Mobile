@@ -63,8 +63,7 @@ const Router = () => {
         {/* <Stack.Screen
           name="Splash"
           component={Splash}
-          options={{headerShown: false}}
-        /> */}
+          options={{headerShown: false}}       /> */}
         <Stack.Screen
           name="MainApp"
           component={MainApp}
