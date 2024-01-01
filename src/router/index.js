@@ -4,7 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Home, Login, Splash, Artikel, Kegiatan, Profil} from '../pages';
 import {NavigationContainer, TabActions} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {rumah, artikel, profil, kegiatan} from '../assets';
+import {rumah, artikel, profil, kegiatann} from '../assets';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -38,7 +38,7 @@ const MainApp = () => {
         options={{
           headerShown: false,
           tabBarIcon: ({}) => (
-            <Image source={kegiatan} style={{width: 35, height: 30}} />
+            <Image source={kegiatann} style={{width: 35, height: 30}} />
           ),
         }}
       />

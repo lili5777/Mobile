@@ -36,7 +36,7 @@ const Kotak = () => {
   const handleLogin = () => {
     setShowPassword(!showPassword);
     // Tempatkan logika login Anda di sini
-    if (username === 'lili' && password === '123') {
+    if (username === 'bahar' && password === '123') {
       // Alert.alert('Login berhasil');
       navigation.navigate('MainApp');
     } else {
