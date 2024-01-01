@@ -3,6 +3,11 @@ import user from './group-11.png';
 import kunci from './vector.png';
 import fb from './facebook.png';
 import google from './google.png';
+import kegiatan from './kegiatan/kegiatan1.jpg';
+import kegiatan2 from './kegiatan/kegiatan2.jpg';
+import cari from './kegiatan/cari.png';
+import lokasi from './kegiatan/lokasi.png';
+import tanggal from './kegiatan/tanggal.png';
 import eye from './eye.png';
 import noteye from './noteye.png';
 import wrong from './wrong.png';
@@ -20,14 +25,14 @@ import lain from './lain.png';
 import notice from './notice.png';
 import rumah from './rumah.png';
 import artikel from './artikell.png';
-import kegiatan from './kegiatann.png';
+import kegiatann from './kegiatann.png';
 import profil from './profill.png';
 import konten from './konten.png';
 import lili from './lili.jpeg';
 
 export {
   artikel,
-  kegiatan,
+  kegiatann,
   profil,
   logo,
   rumah,
@@ -51,5 +56,10 @@ export {
   lain,
   notice,
   konten,
+  kegiatan,
+  kegiatan2,
+  cari,
+  lokasi,
+  tanggal,
   lili,
 };
