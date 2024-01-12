@@ -60,11 +60,10 @@ const Router = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Splash">
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Splash"
           component={Splash}
-          options={{headerShown: false}}
-        />
+          options={{headerShown: false}}       /> */}
         <Stack.Screen
           name="MainApp"
           component={MainApp}
