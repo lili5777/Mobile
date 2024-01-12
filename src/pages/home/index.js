@@ -22,12 +22,21 @@ import {
 } from '../../assets';
 import StickyHeader from '../../components/header/home';
 import LinearGradient from 'react-native-linear-gradient';
+import {useNavigation} from '@react-navigation/native';
 
 const gambar = [sw1, sw2, sw3];
 
 const Home = () => {
+  const navigation = useNavigation();
   const {width} = Dimensions.get('window');
   const isTablet = width >= 600; // Menetapkan batas lebar untuk dianggap sebagai tablet
+
+  const menuanggota = () =>{
+    navigation.navigate('Anggota');
+  };
+   const menukepanitiaan = () => {
+     navigation.navigate('Kepanitiaan');
+   };
 
   let imageWidth;
   let imageHeight;
@@ -92,7 +101,9 @@ const Home = () => {
                 <Image source={surat} style={styles.fitur} />
                 <Text>Secretary</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={{alignItems: 'center'}}>
+              <TouchableOpacity
+                style={{alignItems: 'center'}}
+                onPress={menuanggota}>
                 <Image source={anggota} style={styles.fitur} />
                 <Text>Member</Text>
               </TouchableOpacity>
@@ -116,7 +127,9 @@ const Home = () => {
                 <Image source={organisasi} style={styles.fitur} />
                 <Text>Organization</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={{alignItems: 'center'}}>
+              <TouchableOpacity
+                style={{alignItems: 'center'}}
+                onPress={menukepanitiaan}>
                 <Image source={panitia} style={styles.fitur} />
                 <Text>Committee</Text>
               </TouchableOpacity>
