@@ -12,6 +12,8 @@ import {
 } from 'react-native';
 import {cari, kegiatan, lokasi, tanggal} from '../../assets';
 
+const { tes } = Dimensions.get('window');
+
 const newsData = [
   {
     id: '1',
@@ -96,12 +98,16 @@ const Kegiatan = () => {
 };
 
 export default Kegiatan;
+
 const tinggi = Dimensions.get('window').height;
 const lebar = Dimensions.get('window').width;
 const styles = StyleSheet.create({
   cari: {
     width: '100%',
     flexDirection: 'row',
+    // alignItems: 'center',
+  },
+  njr: {
     // alignItems: 'center',
   },
   iconcari: {
@@ -175,8 +181,9 @@ const styles = StyleSheet.create({
   },
   icon: {
     justifyContent: 'center',
-    width: 320,
+    // width: 320,
     height: 180,
     borderRadius: 10,
+    width: lebar,
   },
 });

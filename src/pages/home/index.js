@@ -22,12 +22,21 @@ import {
 } from '../../assets';
 import StickyHeader from '../../components/header/home';
 import LinearGradient from 'react-native-linear-gradient';
+import {useNavigation} from '@react-navigation/native';
 
 const gambar = [sw1, sw2, sw3];
 
 const Home = () => {
+  const navigation = useNavigation();
   const {width} = Dimensions.get('window');
   const isTablet = width >= 600; // Menetapkan batas lebar untuk dianggap sebagai tablet
+
+  const menuanggota = () =>{
+    navigation.navigate('Anggota');
+  };
+   const menukepanitiaan = () => {
+     navigation.navigate('Kepanitiaan');
+   };
 
   let imageWidth;
   let imageHeight;
@@ -86,19 +95,21 @@ const Home = () => {
               }}>
               <TouchableOpacity style={{alignItems: 'center'}}>
                 <Image source={uang} style={styles.fitur} />
-                <Text>Treasurer</Text>
+                <Text style={styles.teks}>Treasurer</Text>
               </TouchableOpacity>
               <TouchableOpacity style={{alignItems: 'center'}}>
                 <Image source={surat} style={styles.fitur} />
-                <Text>Secretary</Text>
+                <Text style={styles.teks}>Secretary</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={{alignItems: 'center'}}>
+              <TouchableOpacity
+                style={{alignItems: 'center'}}
+                onPress={menuanggota}>
                 <Image source={anggota} style={styles.fitur} />
-                <Text>Member</Text>
+                <Text style={styles.teks}>Member</Text>
               </TouchableOpacity>
               <TouchableOpacity style={{alignItems: 'center'}}>
                 <Image source={skejul} style={styles.fitur} />
-                <Text>Schejuled</Text>
+                <Text style={styles.teks}>Schejuled</Text>
               </TouchableOpacity>
             </View>
             <View
@@ -110,24 +121,26 @@ const Home = () => {
               }}>
               <TouchableOpacity style={{alignItems: 'center'}}>
                 <Image source={absensi} style={styles.fitur} />
-                <Text>Presence</Text>
+                <Text style={styles.teks}>Presence</Text>
               </TouchableOpacity>
               <TouchableOpacity style={{alignItems: 'center'}}>
                 <Image source={organisasi} style={styles.fitur} />
-                <Text>Organization</Text>
+                <Text style={styles.teks}>Organization</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={{alignItems: 'center'}}>
+              <TouchableOpacity
+                style={{alignItems: 'center'}}
+                onPress={menukepanitiaan}>
                 <Image source={panitia} style={styles.fitur} />
-                <Text>Committee</Text>
+                <Text style={styles.teks}>Committee</Text>
               </TouchableOpacity>
               <TouchableOpacity style={{alignItems: 'center'}}>
                 <Image source={lain} style={styles.fitur} />
-                <Text>More</Text>
+                <Text style={styles.teks}>More</Text>
               </TouchableOpacity>
             </View>
 
             <View style={styles.menu}>
-              <Text style={{fontWeight: 'bold', fontSize: 18}}>
+              <Text style={{fontWeight: 'bold', fontSize: 18,color:'black'}}>
                 Latest Post
               </Text>
               <TouchableOpacity>
@@ -173,6 +186,7 @@ const Home = () => {
 };
 
 export default Home;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -196,5 +210,8 @@ const styles = StyleSheet.create({
   fitur: {
     width: 40,
     height: 40,
+  },
+  teks: {
+    color:'black',
   },
 });
