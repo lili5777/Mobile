@@ -10,17 +10,17 @@ import {
 import kiri from '../../assets/icon/kiri.png';
 import CardKepanitiaan from '../../components/CardKepanitiaan';
 
-const Kepanitian = () => {
+const Kepanitian = ({navigation}) => {
   return (
     <View style={styles.container}>
       {/* header */}
       <View style={styles.header}>
-        <View style={{flexDirection: 'row'}}>
-          <TouchableOpacity onPress={()=>navigation.navigate('Dashboard')}>
+        {/* <View style={{flexDirection: 'row'}}>
+          <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
             <Image source={kiri} style={styles.icon} />
           </TouchableOpacity>
           <Text style={styles.judul}>Kepanitiaan</Text>
-        </View>
+        </View> */}
 
         <View style={{flexDirection: 'row'}}>
           <Text
@@ -100,9 +100,17 @@ const styles = StyleSheet.create({
     // backgroundColor: 'white',
   },
   header: {
-    // backgroundColor: 'red',
-    height: 100,
+    // width: 375,
+    height: 89,
     borderRadius: 10,
+    backgroundColor: '#FFFFFF',
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowRadius: 4,
+    shadowOpacity: 1,
   },
   icon: {
     width: 32,
@@ -110,9 +118,16 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
   judul: {
-    fontWeight: 'bold',
+    // width: 140,
+    // height: 29,
+    fontFamily: 'Inter',
     fontSize: 24,
-    top: 9,
-    left: 73,
+    fontWeight: '700',
+    fontStyle: 'normal',
+    lineHeight: 24,
+    color: '#000000',
+    textAlign: 'center',
+    marginLeft: 73,
+    marginTop: 10,
   },
 });

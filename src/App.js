@@ -11,11 +11,11 @@ const App = () => {
     // </NavigationContainer>
     // );
     <>
-      <StatusBar
+      {/* <StatusBar
         translucent
         backgroundColor="transparent"
         barStyle="dark-content"
-      />
+      /> */}
       <Router />
     </>
   );

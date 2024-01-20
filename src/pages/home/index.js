@@ -127,7 +127,7 @@ const Home = () => {
                 <Image source={organisasi} style={styles.fitur} />
                 <Text style={styles.teks}>Organization</Text>
               </TouchableOpacity>
-              
+
               <TouchableOpacity
                 style={{alignItems: 'center'}}
                 onPress={menukepanitiaan}>

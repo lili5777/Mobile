@@ -13,4 +13,4 @@ import Kepanitian from './src/pages/kepanitiaan';
 import CardKepanitiaan from './src/components/CardKepanitiaan';
 
 
-AppRegistry.registerComponent(appName, () => Kepanitian);
+AppRegistry.registerComponent(appName, () => App);
