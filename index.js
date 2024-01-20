@@ -9,4 +9,8 @@ import MyCard from './src/components/Card';
 import { Artikel } from './src/pages';
 import TombolMenu from './src/components/TombolMenu';
 import HorizontalButtonScroll from './src/components/TombolMenu';
-AppRegistry.registerComponent(appName, () => App);
+import Kepanitian from './src/pages/kepanitiaan';
+import CardKepanitiaan from './src/components/CardKepanitiaan';
+
+
+AppRegistry.registerComponent(appName, () => Kepanitian);

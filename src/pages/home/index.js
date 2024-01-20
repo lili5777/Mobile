@@ -31,12 +31,12 @@ const Home = () => {
   const {width} = Dimensions.get('window');
   const isTablet = width >= 600; // Menetapkan batas lebar untuk dianggap sebagai tablet
 
-  const menuanggota = () =>{
+  const menuanggota = () => {
     navigation.navigate('Anggota');
   };
-   const menukepanitiaan = () => {
-     navigation.navigate('Kepanitiaan');
-   };
+  const menukepanitiaan = () => {
+    navigation.navigate('Kepanitiaan');
+  };
 
   let imageWidth;
   let imageHeight;
@@ -127,12 +127,14 @@ const Home = () => {
                 <Image source={organisasi} style={styles.fitur} />
                 <Text style={styles.teks}>Organization</Text>
               </TouchableOpacity>
+              
               <TouchableOpacity
                 style={{alignItems: 'center'}}
                 onPress={menukepanitiaan}>
                 <Image source={panitia} style={styles.fitur} />
                 <Text style={styles.teks}>Committee</Text>
               </TouchableOpacity>
+
               <TouchableOpacity style={{alignItems: 'center'}}>
                 <Image source={lain} style={styles.fitur} />
                 <Text style={styles.teks}>More</Text>
@@ -140,7 +142,7 @@ const Home = () => {
             </View>
 
             <View style={styles.menu}>
-              <Text style={{fontWeight: 'bold', fontSize: 18,color:'black'}}>
+              <Text style={{fontWeight: 'bold', fontSize: 18, color: 'black'}}>
                 Latest Post
               </Text>
               <TouchableOpacity>
@@ -212,6 +214,6 @@ const styles = StyleSheet.create({
     height: 40,
   },
   teks: {
-    color:'black',
+    color: 'black',
   },
 });

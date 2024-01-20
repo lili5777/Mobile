@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: 'row',
+    // color:'black',
   },
   button: {
     backgroundColor: 'white',
