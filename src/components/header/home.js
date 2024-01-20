@@ -8,7 +8,7 @@ const StickyHeader = ({title}) => {
     <View style={styles.header}>
       <View>
         <Text style={{fontWeight: 'bold', fontSize: 25, color: 'black'}}>
-          Hello! Najwar
+          Hello!
         </Text>
         <Text style={{fontSize: 15}}>{title}</Text>
       </View>

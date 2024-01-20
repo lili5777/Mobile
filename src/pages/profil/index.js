@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   Text,
@@ -9,40 +9,33 @@ import {
   Dimensions,
   TextInput,
 } from 'react-native';
-import {lili, bulatan, p1, p2, p3, p4, p5} from '../../assets';
+import {lili, bulatan, edit, kalender} from '../../assets';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {RadioButton} from 'react-native-paper';
 
 const Profil = () => {
+  const [checked, setChecked] = useState('cowok');
   return (
-    <View style={styles.container}>
-      <Image source={bulatan} style={styles.bulat} />
-      <Image source={bulatan} style={styles.bulat2} />
-      <Image source={bulatan} style={styles.bulat3} />
-      <Text
-        style={{
-          color: 'white',
-          fontWeight: 'bold',
-          fontSize: wp(6),
-          marginTop: wp(8),
-          zIndex: 6,
-        }}>
-        My Profil
-      </Text>
-      <Image source={lili} style={styles.foto} />
-      <View style={styles.koutak}>
+    <ScrollView style={{width: '100%'}}>
+      <View style={styles.container}>
+        <Image source={bulatan} style={styles.bulat} />
+        <Image source={bulatan} style={styles.bulat2} />
+        <Image source={bulatan} style={styles.bulat3} />
         <Text
           style={{
+            color: 'white',
             fontWeight: 'bold',
-            fontSize: wp(5.5),
-            color: 'black',
-            marginTop: wp(2),
-            textAlign: 'center',
+            fontSize: wp(6),
+            marginTop: wp(8),
+            zIndex: 6,
           }}>
-          Muh.Ali Ferdiansyah
+          My Profil
         </Text>
+        <Image source={lili} style={styles.foto} />
+
         <Text
           style={{
             fontSize: wp(4),
@@ -52,136 +45,210 @@ const Profil = () => {
           }}>
           Edit personal information
         </Text>
-        <TouchableOpacity>
-          <View
-            style={{
-              flexDirection: 'row',
-              width: wp('70%'),
-              alignItems: 'center',
-              paddingBottom: wp(2),
-            }}>
-            <Image source={p1} style={{width: wp('13%'), height: wp('13%')}} />
-            <Text
-              style={{
-                fontSize: wp(4),
-                paddingLeft: wp(3),
-                fontWeight: '500',
-                width: wp('50%'),
-              }}>
-              Profile
-            </Text>
-            <Text style={{textAlign: 'right', fontSize: wp(6)}}>></Text>
+
+        <View
+          style={{
+            width: '80%',
+            borderBottomWidth: 1,
+            borderColor: 'gray',
+            paddingBottom: 5,
+          }}>
+          <Text>Stambuk</Text>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <Text style={{fontSize: 17, fontWeight: '500'}}>212040</Text>
+            <TouchableOpacity>
+              <Image source={edit} style={{width: wp(7), height: wp(7)}} />
+            </TouchableOpacity>
           </View>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <View
-            style={{
-              flexDirection: 'row',
-              width: wp('70%'),
-              alignItems: 'center',
-              paddingBottom: wp(2),
-            }}>
-            <Image
-              source={p2}
-              style={{
-                width: wp('10%'),
-                height: wp('10%'),
-                marginRight: wp('3%'),
-              }}
-            />
-            <Text
-              style={{
-                fontSize: wp(4),
-                paddingLeft: wp(3),
-                fontWeight: '500',
-                width: wp('50%'),
-              }}>
-              Language
+        </View>
+
+        <View
+          style={{
+            width: '80%',
+            borderBottomWidth: 1,
+            borderColor: 'gray',
+            paddingBottom: 5,
+            paddingTop: 20,
+          }}>
+          <Text>Nama Lengkap</Text>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <Text style={{fontSize: 17, fontWeight: '500'}}>
+              Muh.ali Ferdiansyah
             </Text>
-            <Text style={{textAlign: 'right', fontSize: wp(6)}}>></Text>
+            <TouchableOpacity>
+              <Image source={edit} style={{width: wp(7), height: wp(7)}} />
+            </TouchableOpacity>
           </View>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <View
-            style={{
-              flexDirection: 'row',
-              width: wp('70%'),
-              alignItems: 'center',
-              paddingBottom: wp(2),
-            }}>
-            <Image source={p3} style={{width: wp('13%'), height: wp('13%')}} />
-            <Text
-              style={{
-                fontSize: wp(4),
-                paddingLeft: wp(3),
-                fontWeight: '500',
-                width: wp('50%'),
-              }}>
-              Privacy & Security
+        </View>
+
+        <View
+          style={{
+            width: '80%',
+            borderBottomWidth: 1,
+            borderColor: 'gray',
+            paddingBottom: 5,
+            paddingTop: 20,
+          }}>
+          <Text>Nomor Anggota</Text>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <Text style={{fontSize: 17, fontWeight: '500'}}>
+              DCC.12IE.AK4.209
             </Text>
-            <Text style={{textAlign: 'right', fontSize: wp(6)}}>></Text>
+            <TouchableOpacity>
+              <Image source={edit} style={{width: wp(7), height: wp(7)}} />
+            </TouchableOpacity>
           </View>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <View
-            style={{
-              flexDirection: 'row',
-              width: wp('70%'),
-              alignItems: 'center',
-              paddingBottom: wp(2),
-            }}>
-            <Image
-              source={p4}
-              style={{
-                width: wp('10%'),
-                height: wp('9%'),
-                marginRight: wp('2%'),
-                marginLeft: wp('1%'),
-              }}
-            />
-            <Text
-              style={{
-                fontSize: wp(4),
-                paddingLeft: wp(3),
-                fontWeight: '500',
-                width: wp('50%'),
-              }}>
-              Saved
+        </View>
+
+        <View
+          style={{
+            width: '80%',
+            borderBottomWidth: 1,
+            borderColor: 'gray',
+            paddingBottom: 5,
+            paddingTop: 20,
+          }}>
+          <Text>Anggkatan</Text>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <Text style={{fontSize: 17, fontWeight: '500'}}>24</Text>
+            <TouchableOpacity>
+              <Image source={edit} style={{width: wp(7), height: wp(7)}} />
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        <View
+          style={{
+            width: '80%',
+            borderBottomWidth: 1,
+            borderColor: 'gray',
+            paddingBottom: 5,
+            paddingTop: 20,
+          }}>
+          <Text>Tempat Lahir</Text>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <Text style={{fontSize: 17, fontWeight: '500'}}>Depok</Text>
+            <TouchableOpacity>
+              <Image source={edit} style={{width: wp(7), height: wp(7)}} />
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        <View
+          style={{
+            width: '80%',
+            borderBottomWidth: 1,
+            borderColor: 'gray',
+            paddingBottom: 5,
+            paddingTop: 20,
+          }}>
+          <Text>Tanggal Lahir</Text>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <Text style={{fontSize: 17, fontWeight: '500'}}>06-09-2000</Text>
+            <TouchableOpacity>
+              <Image source={kalender} style={{width: wp(7), height: wp(7)}} />
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        <View
+          style={{
+            width: '80%',
+            borderBottomWidth: 1,
+            borderColor: 'gray',
+            paddingBottom: 5,
+            paddingTop: 20,
+          }}>
+          <Text>Jenis Kelamin</Text>
+
+          <RadioButton.Group
+            onValueChange={newValue => setChecked(newValue)}
+            value={checked}>
+            <View
+              style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+              <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                <RadioButton value="cowok" color="#14b1ff" />
+                <Text style={{fontSize: 17, fontWeight: '500'}}>Cowok</Text>
+              </View>
+              <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                <RadioButton value="cewek" color="#14b1ff" />
+                <Text style={{fontSize: 17, fontWeight: '500'}}>Cewek</Text>
+              </View>
+            </View>
+          </RadioButton.Group>
+        </View>
+
+        <View
+          style={{
+            width: '80%',
+            borderBottomWidth: 1,
+            borderColor: 'gray',
+            paddingBottom: 5,
+            paddingTop: 20,
+          }}>
+          <Text>Nomor Telepon</Text>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <Text style={{fontSize: 17, fontWeight: '500'}}>089787656788</Text>
+            <TouchableOpacity>
+              <Image source={edit} style={{width: wp(7), height: wp(7)}} />
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        <View
+          style={{
+            width: '80%',
+            borderBottomWidth: 1,
+            borderColor: 'gray',
+            paddingBottom: 5,
+            paddingTop: 20,
+          }}>
+          <Text>Email</Text>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <Text style={{fontSize: 17, fontWeight: '500'}}>
+              Zailyanzali@gmail.com
             </Text>
-            <Text style={{textAlign: 'right', fontSize: wp(6)}}>></Text>
+            <TouchableOpacity>
+              <Image source={edit} style={{width: wp(7), height: wp(7)}} />
+            </TouchableOpacity>
           </View>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <View
-            style={{
-              flexDirection: 'row',
-              width: wp('70%'),
-              alignItems: 'center',
-              paddingBottom: wp(2),
-            }}>
-            <Image
-              source={p5}
-              style={{
-                width: wp('10%'),
-                height: wp('10%'),
-                marginLeft: wp('1%'),
-                marginRight: wp('2%'),
-              }}
-            />
-            <Text
-              style={{
-                fontSize: wp(4),
-                paddingLeft: wp(3),
-                fontWeight: '500',
-                width: wp('50%'),
-              }}>
-              Help
-            </Text>
-            <Text style={{textAlign: 'right', fontSize: wp(6)}}>></Text>
+        </View>
+
+        <View
+          style={{
+            width: '80%',
+            borderBottomWidth: 1,
+            borderColor: 'gray',
+            paddingBottom: 5,
+            paddingTop: 20,
+          }}>
+          <Text>Alamat</Text>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <Text style={{fontSize: 17, fontWeight: '500'}}>Gowa</Text>
+            <TouchableOpacity>
+              <Image source={edit} style={{width: wp(7), height: wp(7)}} />
+            </TouchableOpacity>
           </View>
-        </TouchableOpacity>
+        </View>
+
+        <View
+          style={{
+            width: '80%',
+            borderBottomWidth: 1,
+            borderColor: 'gray',
+            paddingBottom: 5,
+            paddingTop: 20,
+          }}>
+          <Text>Kota</Text>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <Text style={{fontSize: 17, fontWeight: '500'}}>Makassar</Text>
+            <TouchableOpacity>
+              <Image source={edit} style={{width: wp(7), height: wp(7)}} />
+            </TouchableOpacity>
+          </View>
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -193,6 +260,8 @@ const styles = StyleSheet.create({
     flex: 1,
     // justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'white',
+    paddingBottom: wp(20),
   },
   bulat: {
     width: wp(130),
@@ -247,24 +316,5 @@ const styles = StyleSheet.create({
     // elevation: 9,
     marginTop: hp(3),
     zIndex: 5,
-  },
-  koutak: {
-    backgroundColor: 'white',
-    paddingHorizontal: wp(5),
-    paddingTop: wp(30),
-    marginTop: -tinggi * 0.16,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 12,
-    },
-    shadowOpacity: 0.58,
-    shadowRadius: 16.0,
-
-    elevation: 24,
-    zIndex: 0,
-    paddingBottom: wp(5),
-    borderBottomLeftRadius: wp('5%'),
-    borderBottomRightRadius: wp('5%'),
   },
 });
